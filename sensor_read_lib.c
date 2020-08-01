@@ -18,7 +18,7 @@ int open_msr(int core) {
   char msr_filename[BUFSIZ];
   int fd;
 
-  sprintf(msr_filename, "/dev/cpu/%d/msr", core);
+  sprintf(msr_filename, "/dev/cpu/%d/msr_safe", core);
   fd = open(msr_filename, O_RDWR);
   if ( fd < 0 ) {
     if ( errno == ENXIO ) {
